@@ -164,3 +164,114 @@ Served asset /welcome.js - 304 Not Modified (5ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-20 14:04:02 +0800
 Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-23 00:53:25 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.1ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 292ms (Views: 142.8ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-23 00:53:27 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.4ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-23 00:53:27 +0800
+Served asset /application.css - 200 OK (13ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-23 00:53:27 +0800
+Served asset /wanteds.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-23 00:53:27 +0800
+Served asset /people.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:27 +0800
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /welcome.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /scaffolds.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /people.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /welcome.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /application.js - 200 OK (65ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-23 00:53:28 +0800
+Served asset /wanteds.js - 304 Not Modified (13ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-24 10:27:37 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (4.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 1789ms (Views: 1408.8ms | ActiveRecord: 56.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:27:46 +0800
+Served asset /scaffolds.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-24 10:27:46 +0800
+Served asset /application.css - 200 OK (88ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:27:46 +0800
+Served asset /welcome.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:27:46 +0800
+Served asset /people.css - 304 Not Modified (72ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /jquery_ujs.js - 200 OK (164ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /wanteds.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /jquery.js - 200 OK (44ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /people.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /wanteds.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /welcome.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
+Served asset /application.js - 200 OK (132ms)
