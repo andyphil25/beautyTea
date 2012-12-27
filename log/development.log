@@ -275,3 +275,239 @@ Served asset /welcome.js - 304 Not Modified (12ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-24 10:27:47 +0800
 Served asset /application.js - 200 OK (132ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-24 10:44:54 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 804ms (Views: 444.2ms | ActiveRecord: 44.0ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /wanteds.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /wanteds.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /people.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /welcome.css - 304 Not Modified (44ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /people.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /scaffolds.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:44:59 +0800
+Served asset /welcome.js - 304 Not Modified (28ms)
+
+
+Started GET "/wanteds/new" for 127.0.0.1 at 2012-12-24 10:46:05 +0800
+Processing by WantedsController#new as HTML
+  Rendered wanteds/_form.html.erb (132.1ms)
+  Rendered wanteds/new.html.erb within layouts/application (276.2ms)
+Completed 200 OK in 368ms (Views: 320.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:06 +0800
+Served asset /people.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:06 +0800
+Served asset /scaffolds.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:06 +0800
+Served asset /wanteds.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:07 +0800
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:07 +0800
+Served asset /wanteds.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:07 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:07 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started POST "/wanteds" for 127.0.0.1 at 2012-12-24 10:46:14 +0800
+Processing by WantedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uxwnMWk7dmiFiiIG0KuGLM8jLE/09bJKHD245UKtGh0=", "wanted"=>{"name"=>"sdasds", "msg"=>"dasdadsa", "date(1i)"=>"2012", "date(2i)"=>"12", "date(3i)"=>"24"}, "commit"=>"Create Wanted"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (256.1ms)[0m  [1mINSERT INTO "wanteds" ("created_at", "date", "msg", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 24 Dec 2012 02:46:14 UTC +00:00], ["date", Mon, 24 Dec 2012], ["msg", "dasdadsa"], ["name", "sdasds"], ["updated_at", Mon, 24 Dec 2012 02:46:14 UTC +00:00]]
+  [1m[35m (48.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/wanteds/1
+Completed 302 Found in 320ms (ActiveRecord: 304.2ms)
+
+
+Started GET "/wanteds/1" for 127.0.0.1 at 2012-12-24 10:46:14 +0800
+Processing by WantedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered wanteds/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 72ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /people.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /wanteds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:15 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/wanteds" for 127.0.0.1 at 2012-12-24 10:46:27 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /people.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /people.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /wanteds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:28 +0800
+Served asset /welcome.js - 304 Not Modified (8ms)
+
+
+Started GET "/wanteds/1/edit" for 127.0.0.1 at 2012-12-24 10:46:42 +0800
+Processing by WantedsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered wanteds/_form.html.erb (28.0ms)
+  Rendered wanteds/edit.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 100ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /people.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /scaffolds.css - 304 Not Modified (44ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /welcome.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /wanteds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:43 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started PUT "/wanteds/1" for 127.0.0.1 at 2012-12-24 10:46:48 +0800
+Processing by WantedsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uxwnMWk7dmiFiiIG0KuGLM8jLE/09bJKHD245UKtGh0=", "wanted"=>{"name"=>"sdasds", "msg"=>"dasdadsasdda", "date(1i)"=>"2012", "date(2i)"=>"12", "date(3i)"=>"24"}, "commit"=>"Update Wanted", "id"=>"1"}
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (4.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  UPDATE "wanteds" SET "msg" = 'dasdadsasdda', "updated_at" = '2012-12-24 02:46:48.293576' WHERE "wanteds"."id" = 1
+  [1m[36m (52.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wanteds/1
+Completed 302 Found in 80ms (ActiveRecord: 60.0ms)
+
+
+Started GET "/wanteds/1" for 127.0.0.1 at 2012-12-24 10:46:48 +0800
+Processing by WantedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered wanteds/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 92ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /people.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/wanteds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /wanteds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-24 10:46:49 +0800
+Served asset /welcome.js - 304 Not Modified (8ms)
