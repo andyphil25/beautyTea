@@ -2466,3 +2466,1020 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 04:48:54 +0800
 Served asset /application.js - 304 Not Modified (4ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePeople (20121217032853)
+Migrating to CreateWanteds (20121217053146)
+Migrating to CreateUsers (20121227205513)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "phone" varchar(255), "email" varchar(255), "image" varchar(255), "oauth_token" varchar(255), "oauth_expires_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121227205513')[0m
+  [1m[35m (76.0ms)[0m  commit transaction
+  [1m[36m (4.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("wanteds")
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:14:09 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (16.0ms)
+ERROR: compiling _app_views_layouts_application_html_haml__41229447__614916388 RAISED /home/ubuntu/Documents/beautyTea/app/views/layouts/application.html.haml:15: syntax error, unexpected '!', expecting ')'
+Function body:           def _app_views_layouts_application_html_haml__41229447__614916388(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<!DOCTYPE html>\n<html>\n  <head>\n    <title>Beauty Tea</title>\n    #{_hamlout.adjust_tabs(2); 
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( stylesheet_link_tag 'application'
+));}\n    #{_hamlout.format_script_false_false_false_true_false_true_false(( javascript_include_tag 'application'
+));}\n    #{_hamlout.format_script_false_false_false_true_false_true_false(( csrf_meta_tags
+));}\n  </head>\n  <body>\n    <div id='user_nav'>\n", 1, false);
+
+
+ if current_user
+_hamlout.push_text("      Signed in as\n      <strong>#{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_true_false_true_false_true_false((current_user.firstname
+));}</strong>\n      #{_hamlout.format_script_false_false_false_true_false_true_false(( current_user.lastname
+));}\n      #{_hamlout.format_script_false_false_false_true_false_true_false(( link_to "Sign out", signout_path, id: "sign_out" !
+));}\n", 0, false); else
+_hamlout.push_text("      #{_hamlout.format_script_false_false_false_true_false_true_false(( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+));}\n", 0, false);end
+_hamlout.push_text("    </div>\n    #{_hamlout.adjust_tabs(-1); _hamlout.format_script_false_false_false_true_false_true_false(( yield
+));}\n  </body>\n</html>\n", -2, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:232:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:144:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/notifications.rb:125:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/template.rb:143:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:88:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.8/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/home/ubuntu/Documents/beautyTea/app/controllers/wanteds_controller.rb:7:in `index'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:414:in `_run__204737640__process_action__511659431__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:405:in `__run_callback'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.8/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:121:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal.rb:203:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_controller/metal.rb:246:in `block in action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'
+/usr/local/lib/ruby/gems/1.9.1/gems/omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/omniauth-1.1.1/lib/omniauth/builder.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/rack.rb:54:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/cookies.rb:339:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.8/lib/active_record/query_cache.rb:64:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:405:in `_run__129898119__call__811002674__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:405:in `__run_callback'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.8/lib/rails/rack/logger.rb:26:in `call_app'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.8/lib/rails/rack/logger.rb:16:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.8/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/static.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.8/lib/rails/engine.rb:479:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.8/lib/rails/application.rb:223:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Completed 500 Internal Server Error in 112ms
+
+ActionView::Template::Error (/home/ubuntu/Documents/beautyTea/app/views/layouts/application.html.haml:15: syntax error, unexpected '!', expecting ')'):
+    12:         Signed in as
+    13:         %strong= current_user.firstname 
+    14:         = current_user.lastname
+    15:         = link_to "Sign out", signout_path, id: "sign_out" !
+    16:       - else
+    17:         = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+    18:     
+  app/controllers/wanteds_controller.rb:7:in `index'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (52.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:15:37 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (36.0ms)
+Completed 200 OK in 1325ms (Views: 572.3ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:15:53 +0800
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /people.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /jquery.js - 304 Not Modified (80ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /welcome.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /application.js - 304 Not Modified (120ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:15:54 +0800
+Served asset /wanteds.js - 304 Not Modified (36ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-12-28 05:15:58 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=d9ffdfd6c1cce57748c3c831afbc4567529719c3838d9df6&code=AQCYSp0XgcGBVxnbLqMJD0vfAjECDKeEZe0lxnsa8ccqFmjPDIo_7H9_ZSH7Hptqja9APFMBHrTf0xT4mD1yAQ0859TvSV2hX5g3raFSWp7gpJsFbRylrjFVzkFRmv0dYYPdawPN6XM-uvY2EXfONOTzobirg21ewntqphSEcVL8xUAphpLb9k1czeirO6SY0oF7wtNe3dKzV5zTaMXurvGM" for 127.0.0.1 at 2012-12-28 05:16:00 +0800
+(facebook) Callback phase initiated.
+
+ActionController::RoutingError (uninitialized constant SessionsController):
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:394:in `call_app!'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:356:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:219:in `callback_call'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:175:in `call!'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:157:in `call'
+  omniauth (1.1.1) lib/omniauth/builder.rb:48:in `call'
+  sass (3.2.3) lib/sass/plugin/rack.rb:54:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__1062129647__call__366891416__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/auth/facebook/callback?state=d9ffdfd6c1cce57748c3c831afbc4567529719c3838d9df6&code=AQCYSp0XgcGBVxnbLqMJD0vfAjECDKeEZe0lxnsa8ccqFmjPDIo_7H9_ZSH7Hptqja9APFMBHrTf0xT4mD1yAQ0859TvSV2hX5g3raFSWp7gpJsFbRylrjFVzkFRmv0dYYPdawPN6XM-uvY2EXfONOTzobirg21ewntqphSEcVL8xUAphpLb9k1czeirO6SY0oF7wtNe3dKzV5zTaMXurvGM" for 127.0.0.1 at 2012-12-28 05:21:03 +0800
+(facebook) Callback phase initiated.
+(facebook) Authentication failure! invalid_credentials: OAuth2::Error, : 
+{"error":{"message":"This authorization code has expired.","type":"OAuthException","code":100}}
+
+OAuth2::Error (: 
+{"error":{"message":"This authorization code has expired.","type":"OAuthException","code":100}}):
+  oauth2 (0.8.0) lib/oauth2/client.rb:108:in `request'
+  oauth2 (0.8.0) lib/oauth2/client.rb:131:in `get_token'
+  oauth2 (0.8.0) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:99:in `build_access_token'
+  omniauth-facebook (1.4.1) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+  omniauth-facebook (1.4.1) lib/omniauth/strategies/facebook.rb:174:in `with_authorization_code!'
+  omniauth-facebook (1.4.1) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:74:in `callback_phase'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:219:in `callback_call'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:175:in `call!'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:157:in `call'
+  omniauth (1.1.1) lib/omniauth/builder.rb:48:in `call'
+  sass (3.2.3) lib/sass/plugin/rack.rb:54:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__1062129647__call__366891416__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:21:19 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (32.0ms)
+Completed 200 OK in 252ms (Views: 160.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:21:21 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:21 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-12-28 05:21:24 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=282c4085a6e7019c08929b9013a35548f6dc239a6c982e03&code=AQBWRMKm2hptOpmhlsqHGHNjZk1V7nTescrwBLRGSYEENxg3drkduCndt13fZ_jL0a2oGPg_fNSy4w4quu4m1i5551JRvbmMxaVmmQr0azP9SMWytuFCZaJRG1WJjpJE1z0c5MjXCjWpUJwDptx1lJKcKcd-ops3MoaTIjRRnpOU8DqA5ptm4MLdjKUQLc2KjTS5aEYGRCTNp3vgMBXsKsV-" for 127.0.0.1 at 2012-12-28 05:21:25 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"282c4085a6e7019c08929b9013a35548f6dc239a6c982e03", "code"=>"AQBWRMKm2hptOpmhlsqHGHNjZk1V7nTescrwBLRGSYEENxg3drkduCndt13fZ_jL0a2oGPg_fNSy4w4quu4m1i5551JRvbmMxaVmmQr0azP9SMWytuFCZaJRG1WJjpJE1z0c5MjXCjWpUJwDptx1lJKcKcd-ops3MoaTIjRRnpOU8DqA5ptm4MLdjKUQLc2KjTS5aEYGRCTNp3vgMBXsKsV-", "provider"=>"facebook"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '765568152' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (300.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "image", "lastname", "oauth_expires_at", "oauth_token", "phone", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Dec 2012 21:21:27 UTC +00:00], ["email", "s9862281@m98.nthu.edu.tw"], ["firstname", "Andy"], ["image", "http://graph.facebook.com/765568152/picture?type=square"], ["lastname", "Phil"], ["oauth_expires_at", Mon, 25 Feb 2013 19:57:08 UTC +00:00], ["oauth_token", "AAABdexnhWAcBAFeEne5FslRnCx9BVsPTTp38htiA2sWKQHHAuoZAQsTF2CRmYCC9o1vfoArQk2VYZCQEtrk2ZBu4TDITxxZBBqzD8khZCZBQZDZD"], ["phone", nil], ["provider", "facebook"], ["uid", "765568152"], ["updated_at", Thu, 27 Dec 2012 21:21:27 UTC +00:00]]
+  [1m[35m (56.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 568ms (ActiveRecord: 364.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:21:28 +0800
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (20.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 132ms (Views: 132.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:21:28 +0800
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:28 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:29 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:29 +0800
+Served asset /wanteds.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:29 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:29 +0800
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:21:29 +0800
+Served asset /welcome.js - 304 Not Modified (12ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-12-28 05:33:01 +0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:33:02 +0800
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (16.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (28.0ms)
+Compiled facebook.js  (2449ms)  (pid 3166)
+Compiled application.js  (2677ms)  (pid 3166)
+Completed 200 OK in 3502ms (Views: 3486.0ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:33:06 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:06 +0800
+Served asset /facebook.js - 200 OK (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:06 +0800
+Served asset /jquery.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:06 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:07 +0800
+Served asset /wanteds.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:07 +0800
+Served asset /welcome.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:07 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:07 +0800
+Served asset /application.js - 304 Not Modified (184ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:33:12 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (16.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (32.0ms)
+Completed 200 OK in 144ms (Views: 116.1ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:33:12 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:12 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:33:13 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:37:16 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (80.0ms)
+Completed 200 OK in 1753ms (Views: 940.5ms | ActiveRecord: 100.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:37:27 +0800
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:27 +0800
+Served asset /jquery.js - 304 Not Modified (92ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:28 +0800
+Served asset /facebook.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:28 +0800
+Served asset /people.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:28 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (96ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:28 +0800
+Served asset /welcome.js - 304 Not Modified (60ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:29 +0800
+Served asset /wanteds.js - 304 Not Modified (136ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:37:29 +0800
+Served asset /application.js - 304 Not Modified (300ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:38:24 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (24.0ms)
+Completed 200 OK in 124ms (Views: 108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:38:26 +0800
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:26 +0800
+Served asset /facebook.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:26 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:27 +0800
+Served asset /jquery.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:27 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:27 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:27 +0800
+Served asset /application.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:27 +0800
+Served asset /welcome.js - 304 Not Modified (8ms)
+
+
+Started GET "/wanteds/1/edit" for 127.0.0.1 at 2012-12-28 05:38:33 +0800
+Processing by WantedsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered wanteds/_form.html.haml (52.0ms)
+  Rendered wanteds/edit.html.haml within layouts/application (104.1ms)
+Completed 200 OK in 240ms (Views: 192.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:33 +0800
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:38:33 +0800
+Served asset /application.css - 304 Not Modified (76ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /facebook.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /people.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:34 +0800
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/wanteds" for 127.0.0.1 at 2012-12-28 05:38:37 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (44.0ms)
+Completed 200 OK in 192ms (Views: 172.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /wanteds.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /facebook.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /jquery.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:38:39 +0800
+Served asset /application.js - 304 Not Modified (44ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:39:59 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (32.0ms)
+Completed 200 OK in 1201ms (Views: 584.3ms | ActiveRecord: 40.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /jquery.js - 304 Not Modified (56ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /wanteds.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /facebook.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /people.js - 304 Not Modified (48ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /welcome.js - 304 Not Modified (44ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:40:07 +0800
+Served asset /application.js - 304 Not Modified (156ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:46:30 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (32.0ms)
+Compiled application.js  (12ms)  (pid 3614)
+Completed 200 OK in 1137ms (Views: 684.4ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:46:37 +0800
+Served asset /application.css - 200 OK (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:37 +0800
+Served asset /jquery_ujs.js - 200 OK (36ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:37 +0800
+Served asset /jquery.js - 200 OK (48ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:38 +0800
+Served asset /people.js - 200 OK (12ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:38 +0800
+Served asset /wanteds.js - 200 OK (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:38 +0800
+Served asset /welcome.js - 200 OK (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:46:38 +0800
+Served asset /application.js - 200 OK (80ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-12-28 05:47:17 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-12-28 05:48:22 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=7a2f81d85fc38fbaa71e7590815fc85a081168ffbc21a114&code=AQD0FOFiabBP-8tAWv-sRzet4gYZRhg3k4wVEPC0wETPDiIW0k5V4kK2vaoefIVXRIhR-T2dW7vcZSyaAbPwKglepn72iF0nYmK-ukWccQpgjOfa1b_i9hpqvG7xuu-htuSX8Kdr4QTgn5hVQNbm7kYCUSe1_CFbrIcXxxlCMpOukNUMXsKGw_WtFPUrcK5NzSWELd69_rV59wQ1X5ETP9eV" for 127.0.0.1 at 2012-12-28 05:48:24 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"7a2f81d85fc38fbaa71e7590815fc85a081168ffbc21a114", "code"=>"AQD0FOFiabBP-8tAWv-sRzet4gYZRhg3k4wVEPC0wETPDiIW0k5V4kK2vaoefIVXRIhR-T2dW7vcZSyaAbPwKglepn72iF0nYmK-ukWccQpgjOfa1b_i9hpqvG7xuu-htuSX8Kdr4QTgn5hVQNbm7kYCUSe1_CFbrIcXxxlCMpOukNUMXsKGw_WtFPUrcK5NzSWELd69_rV59wQ1X5ETP9eV", "provider"=>"facebook"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '765568152' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  UPDATE "users" SET "oauth_expires_at" = '2013-02-25 19:56:01.000000', "updated_at" = '2012-12-27 21:48:26.802322' WHERE "users"."id" = 1
+  [1m[36m (40.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 432ms (ActiveRecord: 56.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:48:27 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (100.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 260ms (Views: 244.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:27 +0800
+Served asset /people.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:48:27 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:28 +0800
+Served asset /jquery.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:28 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:28 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:28 +0800
+Served asset /wanteds.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:28 +0800
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-12-28 05:48:33 +0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Processing by WantedsController#index as HTML
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" 
+  Rendered wanteds/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /jquery.js - 304 Not Modified (48ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /wanteds.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:48:34 +0800
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 05:50:36 +0800
+Connecting to database specified by database.yml
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (48.0ms)
+Compiled application.js  (16ms)  (pid 3676)
+Completed 200 OK in 1729ms (Views: 860.5ms | ActiveRecord: 72.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (56ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /facebook.js - 200 OK (48ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /people.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /wanteds.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:43 +0800
+Served asset /jquery.js - 304 Not Modified (204ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:44 +0800
+Served asset /welcome.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:50:44 +0800
+Served asset /application.js - 304 Not Modified (136ms)
+
+
+Started GET "/wanteds/1" for 127.0.0.1 at 2012-12-28 05:52:30 +0800
+Processing by WantedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered wanteds/show.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 68ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:52:30 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:30 +0800
+Served asset /wanteds.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:30 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:30 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:31 +0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:31 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:31 +0800
+Served asset /welcome.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:31 +0800
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/wanteds" for 127.0.0.1 at 2012-12-28 05:52:35 +0800
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 124ms (Views: 112.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /facebook.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /wanteds.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:36 +0800
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/wanteds/2" for 127.0.0.1 at 2012-12-28 05:52:41 +0800
+Processing by WantedsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWanted Load (0.0ms)[0m  SELECT "wanteds".* FROM "wanteds" WHERE "wanteds"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered wanteds/show.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 100ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /jquery.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /wanteds.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /welcome.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:42 +0800
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/wanteds" for 127.0.0.1 at 2012-12-28 05:52:56 +0800
+Processing by WantedsController#index as HTML
+  [1m[36mWanted Load (0.0ms)[0m  [1mSELECT "wanteds".* FROM "wanteds" [0m
+  Rendered wanteds/index.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/wanteds.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:56 +0800
+Served asset /wanteds.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:56 +0800
+Served asset /people.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /facebook.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-28 05:52:57 +0800
+Served asset /application.js - 304 Not Modified (20ms)
