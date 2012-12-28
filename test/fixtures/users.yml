@@ -3,21 +3,23 @@
 one:
   provider: MyString
   uid: MyString
+  name: MyString
   firstname: MyString
   lastname: MyString
-  phone: MyString
-  email: MyString
   image: MyString
+  email: MyString
+  phone: MyString
   oauth_token: MyString
-  oauth_expires_at: 2012-12-28 04:55:13
+  oauth_expires_at: 2012-12-28 16:10:06
 
 two:
   provider: MyString
   uid: MyString
+  name: MyString
   firstname: MyString
   lastname: MyString
-  phone: MyString
-  email: MyString
   image: MyString
+  email: MyString
+  phone: MyString
   oauth_token: MyString
-  oauth_expires_at: 2012-12-28 04:55:13
+  oauth_expires_at: 2012-12-28 16:10:06

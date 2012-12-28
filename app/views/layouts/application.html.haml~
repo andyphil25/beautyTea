@@ -9,12 +9,14 @@
   %body
     #user_nav
       - if current_user
-        Signed in as
-        %strong= current_user.firstname 
-        = current_user.lastname
-        = link_to "Sign out", signout_path, id: "sign_out" !
+        Welcome, 
+        %strong= current_user.name 
+        = link_to "Sign out", signout_path, id: "sign_out" 
+        !
+        = image_tag current_user.image
       - else
-        = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+        = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" 
+    
     
     = yield 
 
